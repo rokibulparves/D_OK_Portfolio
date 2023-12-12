@@ -1,0 +1,28 @@
+.app {
+    height: 100vh;
+    //sets the height every component at max 90vh
+    .section {
+        width: 100%;
+        height: calc(100vh - 90px);
+        background-color: dimgray;
+        position: relative;
+        top: 90px;
+        //scroll happens smooth when click logo
+        scroll-behavior: smooth;
+        //hide vertical scroll bar
+        scroll-snap-type: y mandatory;
+        //hide horizontal scroll bar
+        scrollbar-width: none;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        //sets height for every componet in the section class.
+        > * {
+            width: 100vw;
+            height: calc(100vh - 90px);
+            //mouse scroll snaps which section is closest
+            scroll-snap-align: start;
+        }
+    }
+}
