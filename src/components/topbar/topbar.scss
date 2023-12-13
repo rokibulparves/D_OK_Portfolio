@@ -9,13 +9,16 @@
     color: $mainColor;
     top: 0;
     z-index: 2;
+    transition: background-color 1s;
+    
     //nav element flex horizontally
     .wrapper {
         padding: 10px 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-
+        
+        //left side of nav
         .left {
             display: flex;
             align-items: center;
@@ -29,22 +32,72 @@
                 margin-right: 40px;
                 text-decoration: none;
             }
-
+            // nav icon container
             .itemContainer {
                 margin-right: 30px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
-            
+            //nav icon
             .icon {
                 margin-right: 10px;
             }
-
+            //nav icon
             span {
                 font-size: 15px;
                 font-weight: 500;
             }
         }
+        //right container or right side of nav
+        .right {
+            //setting up hamburger menu
+            .hamburger {
+                width: 32px;
+                height: 25px;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                cursor: pointer;
+                //hamburger menu line style
+                span{
+                    width: 100%;
+                    height: 3px;
+                    background-color: $mainColor;
+                    //helps transfrom from the left side
+                    transform-origin: left;
+                    transition: all 2s ease;
+                }
+            }
+        }
     }
+
+    &.active {
+        background-color: $mainColor;
+        color: white;
+
+
+        .hamburger {
+
+            span {
+                &:first-child{
+                    background-color: white;
+                    //rotate span in the hamburger
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(2){
+                    //invisible the 2nd span element in hamburger
+                    opacity: 0;
+                }
+    
+                &:last-child{
+                    background-color: white;
+                    //rotate span in the hamburger
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
 }
