@@ -14,7 +14,7 @@ export default function Topbar({menuOpen, setMenuOpen}) {
           </div>
           <div className="itemContainer">
             <EmailIcon className="icon" />
-            <span>+8801795722318</span>
+            <span>hmrokibul@gmail.com</span>
           </div>
         </div>
         
